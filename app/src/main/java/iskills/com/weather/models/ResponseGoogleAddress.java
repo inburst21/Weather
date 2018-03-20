@@ -13,8 +13,15 @@ public class ResponseGoogleAddress {
     @SerializedName("results")
     private List<Results> results;
 
+    @SerializedName("error_message")
+    private String errorMessage;
+
     public List<Results> getResults() {
         return results;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
     public class Results {
