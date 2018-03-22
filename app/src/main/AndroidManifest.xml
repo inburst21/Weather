@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".WeatherApp">
-        <activity android:name=".ui.main.ActivityMain">
+
+        <activity android:name=".ui.main.ActivityMain"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

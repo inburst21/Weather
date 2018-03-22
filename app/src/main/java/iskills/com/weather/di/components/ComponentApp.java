@@ -12,6 +12,7 @@ import iskills.com.weather.WeatherApp;
 import iskills.com.weather.di.modules.ActivityBuilder;
 import iskills.com.weather.di.modules.ModuleApp;
 import iskills.com.weather.di.modules.ModuleNet;
+import iskills.com.weather.di.modules.ModuleRepos;
 
 /**
  * lennyhicks
@@ -22,16 +23,15 @@ import iskills.com.weather.di.modules.ModuleNet;
 @Component(modules = {
         AndroidInjectionModule.class,
         ModuleApp.class,
+        ModuleRepos.class,
         ModuleNet.class,
         ActivityBuilder.class})
 public interface ComponentApp extends AndroidInjector<WeatherApp> {
 
-    @Singleton
     @Component.Builder
     interface Builder {
         @BindsInstance
         Builder application(Application application);
-
         ComponentApp build();
     }
 

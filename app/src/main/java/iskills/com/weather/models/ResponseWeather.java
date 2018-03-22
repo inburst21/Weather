@@ -28,6 +28,9 @@ public class ResponseWeather implements Parcelable {
     @SerializedName("hourly")
     private HourlyProperties hourlyProperties;
 
+    @SerializedName("timezone")
+    private String timezone;
+
 
     private ResponseWeather(Parcel in) {
         latitude = in.readDouble();
@@ -66,6 +69,10 @@ public class ResponseWeather implements Parcelable {
         return hourlyProperties;
     }
 
+    public String getTimezone() {
+        return timezone;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -88,6 +95,9 @@ public class ResponseWeather implements Parcelable {
         @SerializedName("temperature")
         private double temperature;
 
+        @SerializedName("precipProbability")
+        private double precipProbability;
+
         public String getSummary() {
             return summary;
         }
@@ -99,6 +109,10 @@ public class ResponseWeather implements Parcelable {
         public String getIcon() {
             return icon;
         }
+
+        public double getPrecipProbability() {
+            return precipProbability;
+        }
     }
 
     public class DailyProperties {
@@ -108,6 +122,43 @@ public class ResponseWeather implements Parcelable {
 
         public List<DailyData> getDailyData() {
             return dailyData;
+        }
+
+        public class DailyData {
+            @SerializedName("temperatureMin")
+            private double temperatureMin;
+
+            @SerializedName("temperatureMax")
+            private double temperatureMax;
+
+            @SerializedName("precipProbability")
+            private double precipProbability;
+
+            @SerializedName("icon")
+            private String icon;
+
+            @SerializedName("time")
+            private long time;
+
+            public double getTemperatureMin() {
+                return temperatureMin;
+            }
+
+            public double getTemperatureMax() {
+                return temperatureMax;
+            }
+
+            public double getPrecipProbability() {
+                return precipProbability;
+            }
+
+            public String getIcon() {
+                return icon;
+            }
+
+            public long getTime() {
+                return time;
+            }
         }
     }
 
@@ -123,7 +174,7 @@ public class ResponseWeather implements Parcelable {
         public class HourlyData {
 
             @SerializedName("time")
-            private int time;
+            private long time;
 
             @SerializedName("icon")
             private String icon;
@@ -131,7 +182,7 @@ public class ResponseWeather implements Parcelable {
             @SerializedName("temperature")
             private double temp;
 
-            public int getTime() {
+            public long getTime() {
                 return time;
             }
 
@@ -142,36 +193,6 @@ public class ResponseWeather implements Parcelable {
             public double getTemp() {
                 return temp;
             }
-        }
-    }
-
-    public class DailyData {
-        @SerializedName("temperatureMin")
-        private double temperatureMin;
-
-        @SerializedName("temperatureMax")
-        private double temperatureMax;
-
-        @SerializedName("precipProbability")
-        private double precipProbability;
-
-        @SerializedName("icon")
-        private String icon;
-
-        public double getTemperatureMin() {
-            return temperatureMin;
-        }
-
-        public double getTemperatureMax() {
-            return temperatureMax;
-        }
-
-        public double getPrecipProbability() {
-            return precipProbability;
-        }
-
-        public String getIcon() {
-            return icon;
         }
     }
 }

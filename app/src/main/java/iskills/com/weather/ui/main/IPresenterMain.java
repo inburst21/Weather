@@ -7,4 +7,7 @@ package iskills.com.weather.ui.main;
 
 public interface IPresenterMain {
     void getWeather(String address);
+
+    void handleSearchButton();
+
 }

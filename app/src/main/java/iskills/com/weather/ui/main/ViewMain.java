@@ -11,4 +11,7 @@ public interface ViewMain {
     void showWeather(ResponseWeather responseWeather);
     void showError(String errorMessage);
     void showLoading(boolean loading);
+    String getLocation();
+    void showSearch(boolean b);
+    void setLocation(String addressName);
 }

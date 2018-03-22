@@ -17,6 +17,7 @@ class Icons {
     private static int partly_cloudy_day = 0x26C5;
     private static int partly_cloudy_night = cloudy;
     private static int unknown = 0x1F615;
+    public static int degree = 0x00B0;
 
     static int getWeather(String weather){
         switch (weather) {

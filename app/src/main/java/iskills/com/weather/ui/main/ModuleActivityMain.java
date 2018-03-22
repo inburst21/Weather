@@ -22,7 +22,4 @@ public class ModuleActivityMain {
     IPresenterMain provideMainPresenter(ViewMain mainView, ApiGoogleGeo apiGoogleGeo, ApiDarkSky apiDarkSky) {
         return new ImplPresenterMain(mainView, apiGoogleGeo, apiDarkSky);
     }
-
-
-
 }
